@@ -5,7 +5,25 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import Echo from "laravel-echo"
 
+window.Pusher = require('pusher-js');
+
+window.Echo = new Echo({
+  broadcaster: 'pusher',
+  key: "websocketkey",
+  wsHost: "api.loc",
+  wsPort: 6001,
+  cluster:"mt1",
+  forceTLS: false,
+  disableStats: true,
+});
+
+window.Echo.channel(`my-channel`)
+    .listen('.my-event', (e) => {
+      console.log(e);
+      console.log('Test');
+    });
 export default {
   name: 'App',
   components: {
