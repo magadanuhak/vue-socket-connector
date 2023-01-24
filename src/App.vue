@@ -15,7 +15,7 @@ window.Echo = new Echo({
   wsHost: "rust-dev-socket.powerit.dev",
   wsPort: 6001,
   cluster:"mt1",
-  forceTLS: false,
+  forceTLS: true,
   disableStats: true,
 });
 
