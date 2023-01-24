@@ -12,7 +12,7 @@ window.Pusher = require('pusher-js');
 window.Echo = new Echo({
   broadcaster: 'pusher',
   key: "websocketkey",
-  wsHost: "api.loc",
+  wsHost: "rust-dev-socket.powerit.dev",
   wsPort: 6001,
   cluster:"mt1",
   forceTLS: false,
@@ -24,6 +24,7 @@ window.Echo.channel(`my-channel`)
       console.log(e);
       console.log('Test');
     });
+
 export default {
   name: 'App',
   components: {
